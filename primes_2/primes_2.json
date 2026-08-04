@@ -1,0 +1,33 @@
+{
+  "nodes": [
+    {
+      "id": "thm:frant",
+      "label": "Theorem 3",
+      "content": "The shifted primes ℙ−1 and ℙ+1 are sets of density recurrence. This is Theorem 1.1 of Frantzikinakis, Host, and Kra (2013), cited here as an external result. The remark following this theorem notes the full generality: for any polynomials q⃗ᵢ: ℤ → ℤˡ with q⃗ᵢ(0) = 0⃗ and any E ⊆ ℤˡ with d*(E) > 0, the set of n with d*(E ∩ (E−q⃗₁(n)) ∩ ... ∩ (E−q⃗ₘ(n))) > 0 meets both ℙ−1 and ℙ+1."
+    },
+    {
+      "id": "lem:density-grid",
+      "label": "Lemma 1",
+      "content": "Let E₁,...,Eₙ ⊆ ℕ be sets of density recurrence. Then for any A ⊆ ℕ with d*(A) > 0 and any k ≥ 1, there exist a ∈ A and eᵢ ∈ Eᵢ for 1 ≤ i ≤ n such that {a + i₁e₁ + ... + iₙeₙ : 0 ≤ iⱼ ≤ k} ⊆ A. Proved by iterating the density recurrence property n times: at each step find eᵢ ∈ Eᵢ and set Aᵢ = Aᵢ₋₁ ∩ (Aᵢ₋₁ − eᵢ) ∩ ... ∩ (Aᵢ₋₁ − keᵢ), which has positive upper Banach density; pick any a ∈ Aₙ."
+    },
+    {
+      "id": "ldg_unlabeled_1",
+      "label": "Remark 1",
+      "content": "Frantzikinakis, Host, and Kra proved a more general result than stated in thm:frant: for any ℓ, m ∈ ℕ, polynomials q⃗₁,...,q⃗ₘ: ℤ → ℤˡ with q⃗ᵢ(0) = 0⃗, and any E ⊆ ℤˡ with d*(E) > 0, the set of integers n such that d*(E ∩ (E−q⃗₁(n)) ∩ ... ∩ (E−q⃗ₘ(n))) > 0 has nonempty intersection with both ℙ−1 and ℙ+1. This remark contextualises thm:frant but is not invoked in any proof in the paper."
+    },
+    {
+      "id": "thm:D",
+      "label": "Theorem 1",
+      "content": "For N ≥ 2, doa(⋃_{t=1}^{N-1} tℙ) = N. Lower bound (N-accessible): given any N-coloring χ, let X = ⋃_{ℓ,c} X_{ℓ,c} where X_{ℓ,c} = {m : χ(m) = χ(m+ℓ) = c}. Case 1: if X has unbounded gaps, a pigeonhole argument on N+1 consecutive integers gives a long monochromatic AP with common difference N ∈ Dₙ. Case 2: if X has bounded gaps, some X_{ℓ,c} has positive upper Banach density; apply Lemma lem:density-grid with E₁ = ℙ−1, E₂ = ℙ+1 (density recurrence by thm:frant) to find a 2D grid inside X_{ℓ,c}, then extract a long monochromatic Dₙ-diffsequence with differences ℓp and ℓq. Upper bound (not (N+1)-accessible): an explicit periodic (N+1)-coloring with period T = N²s! blocks arbitrarily long monochromatic Dₙ-diffsequences for each color class."
+    },
+    {
+      "id": "thm:primes",
+      "label": "Theorem 2",
+      "content": "For every n ≥ 1, doa(ℙ^{(n)}) = 2ⁿ. In particular doa(ℙ) = 2. Lower bound: ⋃_{t=1}^{2ⁿ−1} tℙ ⊆ ℙ^{(n)}, so doa(ℙ^{(n)}) ≥ doa(⋃_{t=1}^{2ⁿ−1} tℙ) = 2ⁿ by Theorem thm:D with N = 2ⁿ. Upper bound: an explicit (2ⁿ+1)-coloring χ(x) = x mod 2ⁿ if 3^{n+1} ∤ x, else 2ⁿ, admits no monochromatic 3^{n+1}-term ℙ^{(n)}-diffsequence: color-2ⁿ chains are blocked since ℙ^{(n)} contains no multiple of 3^{n+1}; color-c ∈ {0,...,2ⁿ−1} chains force differences ≡ 0 mod 2ⁿ, but 2ⁿ is the only such element of ℙ^{(n)}, giving an AP whose residues mod 3^{n+1} form a complete system, contradicting monochromaticity."
+    }
+  ],
+  "edges": [
+    { "source": "lem:density-grid", "target": "thm:D" },
+    { "source": "thm:D", "target": "thm:primes" }
+  ]
+}

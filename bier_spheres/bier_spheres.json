@@ -1,0 +1,100 @@
+{
+  "nodes": [
+    {
+      "id": "thm:main1",
+      "label": "Theorem 1.1",
+      "content": "Let m ≥ 4 and 0 ≤ r ≤ m−3. The number of small covers over Bier(Δ_r^{m−1}) up to D–J equivalence is 1 + m·2^{m−2} if r = 0 or r = m−3, and 1 + m if 0 < r < m−3. This is the coarse statement of the main classification; the detailed version with explicit representatives is Theorem thm:r=0_sc, from which thm:main1 follows (using the combinatorial isomorphism Bier(Δ_r^{m−1}) ≅ Bier(Δ_{m−r−3}^{m−1}) to cover the full range of r)."
+    },
+    {
+      "id": "thm:main2",
+      "label": "Corollary 1.2",
+      "content": "For m ≥ 4 and r ∈ {0, m−3}, there are at most three small covers over Bier(Δ_r^{m−1}) up to homeomorphism, each homeomorphic to #^{m+1}RP^{m−1}, (#^{m−1}RP^{m−1})#(RP^{m−2}×RP^1), or (#^{m−1}RP^{m−1})#RP(γ⊕R^{m−2}). This is the introduction-level restatement of Corollary thm:connected_sum, from which it follows directly."
+    },
+    {
+      "id": "cor:main",
+      "label": "Corollary 1.3",
+      "content": "Let m ≥ 5 and 0 < r ≤ ⌊(m−3)/2⌋. Among the D–J equivalence classes of small covers over Bier(Δ_r^{m−1}), exactly one (the class of A_0) has Betti numbers β_{2k}(M) = C(m,2k)·ind_{{0,...,r+1}}(2k) and β_{2k−1}(M) = C(m,2k)·ind_{{m−1−r,...,m}}(2k); all other classes have the Betti numbers given by Corollary thm:betti_r_positive. Obtained by combining Proposition prop:Bettisk (the A_0 case) with Corollary thm:betti_r_positive (all remaining cases)."
+    },
+    {
+      "id": "remark:main",
+      "label": "Remark 3.2",
+      "content": "For r = 0, all matrices in Definition def:mat give characteristic matrices over Bier(Δ_0^{m−1}). For r > 0, the matrix Λ(A) satisfies the non-singularity condition for A = A_{(1,...,1)}, A = B^s_{(0,...,0)} (s ∈ {1,...,r+1}), and A = C^t_v (where v_t = 1 and v_i = 0 for i ≠ t). Depends on Definition def:mat. Used in the proof of Theorem thm:r=0_sc to establish that cases (2),(3),(4) actually occur."
+    },
+    {
+      "id": "thm:r=0_sc",
+      "label": "Theorem 3.3",
+      "content": "For m ≥ 4, the number of mod-2 characteristic matrices over Bier(Δ_r^{m−1}) up to D–J equivalence is 1 + m·2^{m−2} if r = 0, and 1 + m if 0 < r ≤ ⌊(m−3)/2⌋. Moreover every such matrix arises from Λ(A) for A among the explicitly listed families (A_0, A_v, B_v^s, C_v^t with the stated constraints). Proof: A_0 is always characteristic; Remark remark:main handles cases (2)–(4); Lemmas lemma:main1, lemma:main2, lemma:main3 show no other matrices occur, exhausting the case analysis; the residual case gives A_0."
+    },
+    {
+      "id": "prop:minor",
+      "label": "Proposition 4.1",
+      "content": "A pair (X,Y) is a replacement pair for R_r (i.e. (R_r∖X)∪Y is a facet of Bier(Δ_r^{m−1})) if and only if: (1) |X∩[m]| = |Y∩[m]|, (2) |X∩[m̄]| = |Y∩[m̄]|, (3) i ∈ Y∖{m,m̄} ⟹ ī ∈ X, and (4) {m,m̄} ⊄ Y. Moreover, for every replacement pair, the minor [A]_{X,Y} = 1. Proof: apply the facet characterization of Bier(Δ_r^{m−1}) to F = (R_r∖X)∪Y; the minor equals [Λ(A)]_{R_r,R_r'} = 1. This proposition generates the relation table used by all three main lemmas."
+    },
+    {
+        "id": "ldg_unlabeled_1",
+        "label": "Remark 4.2",
+        "content": "When~$r=0$, the only possible choice of~$s$ is~$s=1$. hus, as~$t$ and~$t'$ vary, Table~\ref{tab:minor-cal-relations} contains all relations arising from~\\eqref{eq:minor_cal}."
+    },
+    {
+      "id": "lemma:main1",
+      "label": "Lemma 4.3",
+      "content": "If Λ(A) satisfies the non-singularity condition and a_{s,s̄} = 0 for some 1 ≤ s ≤ r+1, then A = A_v for some v ∈ Z_2^{m−2} (if r = 0) or A = A_{(1,...,1)} (if r > 0). Proof: substitute s = s_0 into the relation table (from Proposition prop:minor); simplify successively; for r > 0 combine with the three-element replacement-pair relation (eq:minor-3b) to pin down all entries, yielding A_{(1,...,1)}."
+    },
+    {
+      "id": "lemma:main2",
+      "label": "Lemma 4.4",
+      "content": "If Λ(A) is non-singular, a_{s,s̄} = 1 for all 1 ≤ s ≤ r+1, and a_{s,m̄} = 0 for some s, then A = B^1_v (r = 0) or A = B^j_{(0,...,0)} for some j (r > 0). Proof: apply the relation table (Proposition prop:minor) at s = s_0; determine the s_0-row; for r > 0 use a contradiction argument with (eq:minor-3b) to force v = 0, then an explicit 4×4 minor computation combined with Proposition prop:minor (via [A]_{X,Y} = 1) determines the remaining rows."
+    },
+    {
+      "id": "lemma:main3",
+      "label": "Lemma 4.5",
+      "content": "If Λ(A) is non-singular, a_{i,ī} = a_{i,m̄} = 1 for all 1 ≤ i ≤ r+1, and a_{t̄,m} = 0 for some r+2 ≤ t ≤ m−1, then A = C_v^t for some v ∈ Z_2^{m−2} (r = 0) or A = C_v^t with v_t = 1, v_i = 0 for i ≠ t (r > 0). Proof: apply relations (1)–(6) of the table (Proposition prop:minor) at t_0, t_1; for r > 0 use (eq:minor-3b) and an explicit 4×4 minor with Proposition prop:minor to force v_t = 0 for t ≠ t_0."
+    },
+    {
+      "id": "eqn:connected_sum",
+      "label": "Proposition 5.1",
+      "content": "Let Λ be a characteristic matrix over a simplicial complex Γ₁ #_σ Γ₂, with Λ_i the submatrix induced by the vertex set of Γ_i. If the submatrix of Λ with columns indexed by σ has determinant 1, then each Λ_i is non-singular, and M(Γ₁ #_σ Γ₂, Λ) ≅ M(Γ₁,Λ₁) # M(Γ₂,Λ₂). Cited from Davis–Januszkiewicz (1991). Used in the proof of Corollary thm:connected_sum."
+    },
+    {
+      "id": "thm:connected_sum",
+      "label": "Corollary 5.2",
+      "content": "For m ≥ 4 and r ∈ {0, m−3}, every small cover over Bier(Δ_r^{m−1}) is homeomorphic to #^{m+1}RP^{m−1}, (#^{m−1}RP^{m−1})#(RP^{m−2}×RP^1), or (#^{m−1}RP^{m−1})#RP(γ⊕R^{m−2}); the last case occurs only when m is odd. Proof: reduce to r = 0; decompose Bier(Δ_0^{m−1}) as iterated connected sums of simplex boundaries Γ_i along facets σ_i; apply Proposition eqn:connected_sum repeatedly; use the matrix parametrization from Theorem thm:r=0_sc and the known classification of 2-stage generalized real Bott manifolds to identify the residual summand's homeomorphism type."
+    },
+    {
+      "id": "lem:choi-park2017cohomology",
+      "label": "Lemma 5.3",
+      "content": "Let M be the small cover associated with (Γ,Λ). Then β_k(M) = Σ_{ω ∈ row Λ} β̃_{k−1}(Γ_ω), where β̃ denotes reduced Betti number and Γ_ω is the full subcomplex induced by the support of ω. Cited from Choi–Park (2017). Reduces Betti number computation of the small cover to reduced Betti numbers of full subcomplexes. Used in the proofs of Proposition prop:Bettisk and Corollary thm:betti_r_positive."
+    },
+    {
+      "id": "thm:full_subcomplex_Bier",
+      "label": "Lemma 5.4",
+      "content": "For a simplicial complex K on [m] and I,J ⊆ [m], the full subcomplex (Bier K)_{I∪J̄} is homotopy equivalent to: the (|I|−1)-sphere if I = J, I ∈ K, Ī ∈ K̂; the (|I|−2)-sphere if I = J, I ∉ K, Ī ∉ K̂; Σ^{|J|}Lk(J,K|_I) if J ⊊ I and J ∈ K; Σ^{|I|}Lk(Ī,K̂|_{J̄}) if J ⊋ I and Ī ∈ K̂; and a point otherwise. Cited from Choi–Yoon–Yu (2026). Provides the homotopy types needed for the Betti computation. Used in the proof of Corollary thm:betti_r_positive."
+    },
+    {
+      "id": "prop:Bettisk",
+      "label": "Proposition 5.5",
+      "content": "For m ≥ 5 and 0 < r ≤ ⌊(m−3)/2⌋, the small cover M = M(Bier(Δ_r^{m−1}), Λ(A_0)) has β_{2k}(M) = C(m,2k)·ind_{{0,...,r+1}}(2k) and β_{2k−1}(M) = C(m,2k)·ind_{{m−r−1,...,m}}(2k). Cited from Choi–Yoon–Yu (2026). Handles the exceptional A_0 D–J class; combined with Corollary thm:betti_r_positive to give Corollary cor:main."
+    },
+    {
+      "id": "thm:betti_r_positive",
+      "label": "Corollary 5.6",
+      "content": "For m ≥ 5 and 0 < r ≤ ⌊(m−3)/2⌋, and A one of the matrices in Theorem thm:r=0_sc except A_0, the small cover M = M(Bier(Δ_r^{m−1}), Λ(A)) has β_{2k}(M) = C(m−1,2k)·ind_{{0,...,r+1}}(2k) and β_{2k−1}(M) = C(m−1,2k)·ind_{{m−r−1,...,m−1}}(2k) + C(m−2,r+1)·ind_{{m−r−1}}(2k) + C(m−2,r)·ind_{{r+2}}(2k). Proof: for each representative A = A_{(1,...,1)}, B^s_{(0,...,0)}, C^t_{χ^t}, analyze the support V_ω of each ω ∈ row Λ(A); apply Lemma thm:full_subcomplex_Bier to determine the homotopy type of each full subcomplex (three nonzero-Betti cases, computed via shellability of simplex skeleta); then apply Lemma lem:choi-park2017cohomology to assemble the Betti numbers."
+    }
+  ],
+  "edges": [
+    { "source": "remark:main", "target": "thm:r=0_sc" },
+    { "source": "prop:minor", "target": "lemma:main2" },
+    { "source": "prop:minor", "target": "lemma:main3" },
+    { "source": "lemma:main1", "target": "thm:r=0_sc" },
+    { "source": "lemma:main2", "target": "thm:r=0_sc" },
+    { "source": "lemma:main3", "target": "thm:r=0_sc" },
+    { "source": "thm:r=0_sc", "target": "thm:main1" },
+    { "source": "thm:r=0_sc", "target": "thm:connected_sum" },
+    { "source": "thm:r=0_sc", "target": "thm:betti_r_positive" },
+    { "source": "eqn:connected_sum", "target": "thm:connected_sum" },
+    { "source": "lem:choi-park2017cohomology", "target": "thm:betti_r_positive" },
+    { "source": "thm:full_subcomplex_Bier", "target": "thm:betti_r_positive" },
+    { "source": "prop:Bettisk", "target": "cor:main" },
+    { "source": "thm:betti_r_positive", "target": "cor:main" }
+  ]
+}

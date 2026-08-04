@@ -1,0 +1,133 @@
+{
+  "nodes": [
+    {
+      "id": "th-croot",
+      "label": "Theorem 1",
+      "content": "If the integers {2,3,...} are coloured in finitely many colours there is a monochromatic finite set S such that Σ_{n∈S} 1/n = 1. Due to Croot (2003). Cited as the motivation and predecessor to Theorem th-dens; the latter is a density strengthening of this colouring result."
+    },
+    {
+      "id": "th-dens",
+      "label": "Theorem 2",
+      "content": "If A ⊂ ℕ has positive upper density then there is a finite S ⊂ A such that Σ_{n∈S} 1/n = 1. Deduced from Proposition th-techmain via the proof of Theorem th-quant: apply Proposition th-techmain repeatedly (using Lemma sieve2 to guarantee condition (2) and Lemma sieve2/Turán to handle conditions (3)–(4)), finding disjoint S_i with R(S_i) = 1/d_i, until some d has at least d such subsets, then take their union."
+    },
+    {
+      "id": "th-quant",
+      "label": "Theorem 3",
+      "content": "There is C > 0 such that if A ⊂ {1,...,N} and Σ_{n∈A} 1/n ≥ C (log log log N / log log N) log N then there is S ⊂ A with Σ_{n∈S} 1/n = 1. Proved by: (i) restricting to A ∩ [N^ε, N]; (ii) removing integers not divisible by a prime in [5, (log N)^{1/1200}] via Lemma lem-sieve1; (iii) removing integers with atypical ω(n) via Turán; (iv) subdividing into dyadic intervals, removing large prime power divisors via Mertens; (v) applying Corollary cor-techmain to each piece."
+    },
+    {
+      "id": "th-techmain",
+      "label": "Proposition 1",
+      "content": "Let N be large, A ⊂ [N^{1−1/log log N}, N], 1 ≤ y ≤ z ≤ (log N)^{1/500}. Assume: (1) R(A) ≥ 2/y + (log N)^{−1/200}; (2) every n∈A is divisible by d₁, d₂ with y ≤ d₁ and 4d₁ ≤ d₂ ≤ z; (3) all prime powers q | n ∈ A satisfy q ≤ N^{1−6/log log N}; (4) 99/100 · log log N ≤ ω(n) ≤ 2 log log N for all n∈A. Then there is S ⊂ A with R(S) = 1/d for some d ∈ [y, z]. Proved by: applying Lemma lem-pisq repeatedly to produce A_i with R(A_i) ∈ [2/d_i − 1/M, 2/d_i); finding minimal j with a multiple of d_j in A_j; applying Proposition prop-tech to get either case (2) directly (use Proposition prop-fourier with k=d_j) or case (1) (use Proposition prop-tech again on the pruned B to reach case (2), then Proposition prop-fourier with k=e_s)."
+    },
+    {
+      "id": "cor-techmain",
+      "label": "Corollary 1",
+      "content": "Under the same conditions as Proposition th-techmain but with R(A) ≥ (log N)^{1/200} and condition (2) replaced by 'every n∈A is divisible by some prime p ∈ [5, (log N)^{1/500}]': there is S ⊂ A with R(S) = 1. Proved by a greedy maximality argument: take maximal disjoint collection of S_i with R(S_i) = 1/d_i; if no d has d such sets then R(A') ≥ (log N)^{1/500} for the remainder A', contradicting maximality by applying Proposition th-techmain."
+    },
+    {
+      "id": "lem-sieve1",
+      "label": "Lemma 1",
+      "content": "For log N ≥ z > y ≥ 3, the set X of integers not divisible by any prime p ∈ [y, z] satisfies |X ∩ [N, 2N)| ≪ (log y / log z) N. Proved via the Sieve of Eratosthenes (Mertens estimate (mertens2)). Used in the proof of Theorem th-quant to remove integers without a prime divisor in a suitable range, and within the proof of Lemma sieve2."
+    },
+    {
+      "id": "sieve2",
+      "label": "Lemma 2",
+      "content": "For (log N)^{1/2} ≥ z > 4y ≥ 8, the set Y of integers in [1, N] divisible by at least two distinct primes p₁, p₂ ∈ [y, z] with 4p₁ < p₂ satisfies |{1,...,N} \\ Y| ≪ (log y / log z)^{1/2} N. Proved by choosing an intermediate parameter w = exp(√((log y)(log z))), applying Lemma lem-sieve1 twice (once for [w,z] and once for each p ∈ [w,z] combined with [y, p/4)), and partial summation. Used in the proof of Theorem th-dens to guarantee condition (2) of Proposition th-techmain."
+    },
+    {
+      "id": "prop-fourier",
+      "label": "Proposition 2",
+      "content": "There is c > 0 such that the following holds. With N ≥ M ≥ N^{3/4}, 1 ≤ k ≤ cM, η ∈ (0,1), M/2 ≥ K ≥ N^{3/4}, and A ⊂ [M,N] satisfying: (1) R(A) ∈ [2/k − 1/M, 2/k); (2) k | lcm(A); (3) all q ∈ Q_A satisfy q ≤ c·min(M/k, ηMK²/N²(log N)²); (4) for any interval I of length K, either ≥ M/log N elements of A have no multiple in I, or all q ∈ D_I have a common multiple in I — then there is S ⊂ A with R(S) = 1/k. Proved via Fourier analysis on ℤ/[Q]ℤ: a counting argument using exponential sums shows the number of solutions is positive."
+    },
+    {
+      "id": "lem-basic",
+      "label": "Lemma 3",
+      "content": "If 0 < |n₁ − n₂| ≤ N then Σ_{q | gcd(n₁,n₂)} 1/q ≪ log log log N (sum over prime powers q). Proved by noting q | gcd implies q ≤ N; the contribution of prime powers p^r with r ≥ 2 is O(1); the number of prime divisors of any integer ≤ N is O(log N) so the sum 1/p is maximised over the smallest O(log N) primes, giving ≪ log log log N by Mertens (mertens1). Used in the proof of Proposition prop-fourier."
+    },
+    {
+      "id": "lem-rtop",
+      "label": "Lemma 4",
+      "content": "For ε ∈ (0,1/2) and N large: if R(A) ≥ (log N)^{−ε/2} and (1−ε) log log N ≤ ω(n) ≤ 2 log log N for all n∈A then Σ_{q∈Q_A} 1/q ≥ (1−2ε)e^{−1} log log N. Proved by writing R(A) ≤ Σ_t (Σ_{q∈Q_A} 1/q)^t / t! over t in the ω-range; if the sum over Q_A is small the bound (log N)^{−ε/2} ≤ R(A) forces a contradiction via the monotonicity of (ex/t)^t. Used within the proof of Proposition prop-tech."
+    },
+    {
+      "id": "lem-usingq",
+      "label": "Lemma 5",
+      "content": "There is c > 0 such that the following holds. For N ≥ M ≥ N^{1/2}, 1 ≤ k ≤ c log log N, A ⊂ [M, N] with ω(n) ≤ (log N)^{1/k} for all n∈A: for every q with R(A;q) ≥ (log N)^{−1/2} there is d satisfying (1) qd > M exp(−(log N)^{1−1/k}); (2) ω(d) ≤ (5/log k) log log N; (3) Σ_{n∈A_q, qd|n, (qd,n/qd)=1} qd/n ≫ R(A;q)/(log N)^{2/k}. Proved by a greedy algorithm on prime-power divisors of n/q above a threshold y = exp((log N)^{1−2/k}), then bounding the contribution from large-ω(d) terms using Mertens and a product-over-primes estimate. Used in the proof of Proposition prop-tech."
+    },
+    {
+      "id": "prop-tech",
+      "label": "Proposition 3",
+      "content": "Suppose N large, N ≥ M ≥ N^{1/2}, A ⊂ [M,N] with 99/100 · log log N ≤ ω(n) ≤ 2 log log N, R(A) ≥ (log N)^{−1/101}, and R(A;q) ≥ (log N)^{−1/100} for all q∈Q_A. Then either: (1) there is B ⊂ A with R(B) ≥ R(A)/3 and Σ_{q∈Q_B} 1/q ≤ (2/3) log log N; or (2) for every interval I of length ≤ MN^{−2/log log N}, either ≥ M/log N elements of A have no multiple in I, or all q in D_I have a common multiple in I. If Σ_{q∈Q_A} 1/q ≤ (2/3) log log N then case (2) is guaranteed. Proof: assume case (2) fails for some interval I; use Lemma lem-rtop and Lemma lem-usingq to find prime powers w₁, w₂ concentrating R(A) outside I; take A' ⊂ A with many elements dividing some x∈I; bound |A''| = |{n∈A': n | x}| ≤ N^{O(log 2/log log N)} contradicting the divisor bound."
+    },
+    {
+      "id": "lem-pisqa",
+      "label": "Lemma 6",
+      "content": "For N large and A ⊂ [1,N]: there is B ⊂ A with R(B) ≥ R(A) − (log N)^{−1/200} and R(B;q) ≥ 2/(log N)^{1/100} for all q∈Q_B. Proved by a greedy sequential removal: at each step find a prime power q_i ∈ Q_{A_i} with R(A_i; q_i) < 2/(log N)^{1/100} and remove (A_i)_{q_i}; the total loss is bounded by 2/(log N)^{1/100} · Σ_{q≤N} 1/q ≪ log log N / (log N)^{1/100} ≤ (log N)^{−1/200}."
+    },
+    {
+      "id": "lem-pisq",
+      "label": "Lemma 7",
+      "content": "For N large, N ≥ M ≥ N^{1/2}, α > 2/(log N)^{1/200}, A ⊂ [M,N] with R(A) ≥ α + (log N)^{−1/200} and all q∈Q_A satisfying q ≤ M/(log N)^{1/100}: there is B ⊂ A with R(B) ∈ [α − 1/M, α) and R(B;q) ≥ (log N)^{−1/100} for all q∈Q_B. Proved by first applying Lemma lem-pisqa to get A' with R(A';q) ≥ 2/(log N)^{1/100}, then greedily removing elements one at a time while maintaining the q-condition (using Lemma lem-pisqa to select which element to remove), stopping when R falls below α."
+    },
+    {
+      "id": "ldg_unlabeled_1",
+      "label": "Theorem 4",
+      "content": "λ(N) ≫ (log log N)², where λ(N) is the maximum of R(A) over A ⊂ {1,...,N} with no S ⊂ A satisfying R(S) = 1. Proved by taking A = {n ≤ N : p log p > Cn for the largest prime divisor p of n}; R(A) ≫ (log log N)² by summing over fixed largest prime divisor; no S ⊂ A with R(S) = 1 exists because if p is the largest prime dividing any n_i, then p | lcm(m_j) · (Σ 1/m_j), forcing p ≤ e^{O(m_l)} ≪ n_l/log n_l, contradicting membership in A."
+    }
+  ],
+  "edges": [
+    {
+      "source": "th-techmain",
+      "target": "th-dens"
+    },
+    {
+      "source": "th-techmain",
+      "target": "cor-techmain"
+    },
+    {
+      "source": "cor-techmain",
+      "target": "th-quant"
+    },
+    {
+      "source": "lem-sieve1",
+      "target": "th-quant"
+    },
+    {
+      "source": "lem-sieve1",
+      "target": "sieve2"
+    },
+    {
+      "source": "sieve2",
+      "target": "th-dens"
+    },
+    {
+      "source": "lem-basic",
+      "target": "prop-tech"
+    },
+    {
+      "source": "prop-fourier",
+      "target": "th-techmain"
+    },
+    {
+      "source": "lem-rtop",
+      "target": "prop-tech"
+    },
+    {
+      "source": "lem-usingq",
+      "target": "prop-tech"
+    },
+    {
+      "source": "prop-tech",
+      "target": "th-techmain"
+    },
+    {
+      "source": "lem-pisqa",
+      "target": "lem-pisq"
+    },
+    {
+      "source": "lem-pisq",
+      "target": "th-techmain"
+    }
+  ]
+}

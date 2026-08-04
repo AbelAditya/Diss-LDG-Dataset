@@ -1,0 +1,41 @@
+{
+  "nodes": [
+    {
+      "id": "conj:duncan",
+      "label": "Conjecture 1.1",
+      "content": "Let k be a field and G a finite group acting faithfully on a k-variety X. For every prime p, let G_p be a Sylow p-subgroup of G. Then X is G-versal if and only if X is G_p-versal for every prime p. Formulated by Duncan while classifying finite groups of essential dimension 2, motivated by his proof (via Cox rings and universal torsors) that versality is detected on Sylow subgroups for smooth complete toric varieties. This paper disproves the conjecture."
+    },
+    {
+      "id": "thm:main",
+      "label": "Theorem 1.2",
+      "content": "Let ζ be a primitive 7th root of unity and S = {w² = x³y + y³z + z³x} ⊂ ℙ(1,1,1,2), a degree-2 Del Pezzo surface. Let G = ⟨ρ,σ,τ⟩ ≅ (C₇⋊C₃)×C₂ act faithfully on S by ρ[x:y:z:w] = [ζx:ζ⁴y:ζ²z:w], σ[x:y:z:w] = [y:z:x:w], τ[x:y:z:w] = [x:y:z:−w]. Then: (1) the restriction of the action to every Sylow subgroup of G is very versal; (2) ed_ℂ(G) = 3, hence the G-action on S is not versal. Since very versal implies versal, this disproves Conjecture conj:duncan. Proof: combine Proposition prop:sylow-very-versal (part 1) and Proposition prop:ed-nonversal (part 2)."
+    },
+    {
+      "id": "prop:twist-criterion",
+      "label": "Proposition 2.1",
+      "content": "Let k be a field, H a finite discrete group, X an integral quasi-projective H-variety. Then: (i) X is weakly versal iff ᵀX(K) ≠ ∅ for every H-twisting pair (T,K); (ii) X is versal iff ᵀX(K) is Zariski dense in ᵀX for every H-twisting pair; (iii) X is very versal iff ᵀX is K-unirational for every H-twisting pair. Cited from Duncan–Reichstein [Theorem 1.1(a)–(c)]."
+    },
+    {
+      "id": "lem:fixed-rational-curve",
+      "label": "Lemma 2.2",
+      "content": "Let H be a cyclic group and X a degree-2 Del Pezzo surface over ℂ with an H-action. If there is a nonconstant H-equivariant morphism ν: ℙ¹_ℂ → X, then X is H-very versal. Proof: a generator of H, lifted to GL₂(ℂ), has an eigenvector giving an H-fixed point on ℙ¹_ℂ. For any H-twisting pair (T,K), the fixed point descends to a K-point of ᵀ(ℙ¹_ℂ) ≅ ℙ¹_K; twisting ν gives a nonconstant morphism ℙ¹_K → ᵀX; by Salgado–Testa–Várilly-Alvarado [Theorem 17], a degree-2 Del Pezzo surface in characteristic zero admitting a nonconstant morphism from ℙ¹ is unirational; hence ᵀX is K-unirational, and Proposition prop:twist-criterion(iii) gives H-very versality."
+    },
+    {
+      "id": "prop:sylow-very-versal",
+      "label": "Proposition 3.1",
+      "content": "The surface S is G_p-very versal for every prime p, where G₇ = ⟨ρ⟩, G₃ = ⟨σ⟩, G₂ = ⟨τ⟩, and G_p = {1} otherwise. Proof: for p ∉ {2,3,7}, S is rational and Proposition prop:twist-criterion(iii) applies. For p ∈ {2,7}: the cuspidal rational curve C = {y=0, w²=z³x} ⊂ S has normalization ν: ℙ¹ → S, [u:v] ↦ [u²:0:v²:uv³], which is equivariant for the actions τ[u:v] = [u:−v] and ρ[u:v] = [u:ζ⁴v]; Lemma lem:fixed-rational-curve applies. For p = 3: the preimage of the line L = {x+y+z=0} splits as E₊ ∪ E₋ with each E± ≅ ℙ¹; σ preserves L and, having order 3, cannot swap the two components, so σ preserves E₊; the inclusion E₊ ↪ S is a nonconstant G₃-equivariant morphism ℙ¹ → S, and Lemma lem:fixed-rational-curve applies."
+    },
+    {
+      "id": "prop:ed-nonversal",
+      "label": "Proposition 3.2",
+      "content": "ed_ℂ(G) = 3; in particular the G-variety S is not versal. Proof of ed_ℂ(G) > 2: G is not trivial, cyclic, or dihedral of order 2n with n odd, so ed_ℂ(G) > 1 [Duncan, Prop 2.4(c),(d)]; if ed_ℂ(G) = 2 then, since Z(G) is nontrivial, G embeds into GL₂(ℂ) [Duncan, Prop 2.5]; then H = ⟨ρ,σ⟩ ≅ C₇⋊C₃ has a faithful 2-dimensional representation V; a ρ-eigenvector v with eigenvalue λ produces eigenvectors v, σv, σ²v with eigenvalues λ, λ², λ⁴, which are distinct if λ ≠ 1 — impossible in dimension 2; so ρ acts trivially, contradicting faithfulness. For ed_ℂ(G) ≤ 3: the explicit diagonal/permutation/scalar matrices define a faithful 3-dimensional representation. Non-versality of S follows since S has dimension 2 < 3 = ed_ℂ(G) and essential dimension is the smallest dimension of a versal faithful G-variety."
+    }
+  ],
+  "edges": [
+    { "source": "prop:twist-criterion", "target": "lem:fixed-rational-curve" },
+    { "source": "prop:twist-criterion", "target": "prop:sylow-very-versal" },
+    { "source": "lem:fixed-rational-curve", "target": "prop:sylow-very-versal" },
+    { "source": "prop:sylow-very-versal", "target": "thm:main" },
+    { "source": "prop:ed-nonversal", "target": "thm:main" }
+  ]
+}

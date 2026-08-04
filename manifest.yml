@@ -1,0 +1,15 @@
+papers:
+  - id: primes_2 
+    paper_title: "The Primes are 2-Accessible"
+  - id: sphere_packing
+    paper_title: "The sphere packing problem in dimension 8"
+  - id: bier_spheres
+    paper_title: "On Small Covers Over Bier Spheres"
+  - id: polar_collinearity_graphs
+    paper_title: "On the weight distribution bound for the negative eigenvalue of polar collinearity graphs"
+  - id: density_conjecture
+    paper_title: "On A Density Conjecture About Unit Fractions"
+  - id: counterexample_versal_actions
+    paper_title: "A Counterexample to a Conjecture of Duncan on Versal Actions"
+  - id: stanley_gasharov
+    paper_title: "AN INFINITE FAMILY OF COUNTEREXAMPLES TO THE STANLEY–GASHAROV CONJECTURE"

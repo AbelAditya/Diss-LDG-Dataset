@@ -1,0 +1,62 @@
+{
+  "nodes": [
+    {
+      "id": "conj:SG",
+      "label": "Conjecture 1.1",
+      "content": "Every claw-free graph is Schur-positive, i.e. its chromatic symmetric function X_G has nonnegative coefficients in the Schur basis. Posed by Stanley (1998), attributed to Gasharov. A principal source of evidence was Gasharov's theorem that incomparability graphs of (3+1)-free posets are Schur-positive. This paper disproves the conjecture, exhibiting both an infinite family of line-graph counterexamples (Theorem thm:infinite-family) and an infinite family of non-line-graph counterexamples (Theorem thm:nonline-family), and identifying the unique minimum counterexample in each class."
+    },
+    {
+      "id": "prop:edge-first-minimality",
+      "label": "Proposition 2.1",
+      "content": "Every claw-free graph with fewer than 21 edges, or with 21 edges and fewer than 12 vertices, is Schur-positive. The graph G2 = L(H2) is the unique claw-free graph with 21 edges and 12 vertices that is not Schur-positive; hence G2 is the unique minimum counterexample to Conjecture conj:SG under the edge-first (edges, then vertices) order. Proof: reduce to connected graphs (chromatic symmetric function multiplicative over components; Littlewood-Richardson gives Schur-positivity of products); combine Prajapati's order-12 census with an exhaustive exact census of all connected claw-free graphs in the range 13 <= n <= 21, n-1 <= m <= 20 (geng + frontier-connectivity dynamic program computing power-sum then Schur coefficients via the Frobenius character formula), finding no counterexample."
+    },
+    {
+      "id": "prop:line-graph",
+      "label": "Proposition 3.1",
+      "content": "For every integer t >= 4, the graph F_t is a connected line graph; consequently F_t is claw-free. Proof: define the root graph F_t' on V(H2) disjoint-union {c, u2,...,u_t} with edges E(H2) union {{2,c}} union {{c,u_i} : 2 <= i <= t}; verify F_t is isomorphic to L(F_t'); since H2 is connected, so is F_t', hence F_t is a connected line graph and therefore claw-free."
+    },
+    {
+      "id": "lem:specialization",
+      "label": "Lemma 3.2",
+      "content": "For every graph G, vertex v in V(G), and positive integer t: rho_t(X_{B_t(G,v)}) = (t-1)(t-1)!*e_t(x1,...,x_t)*rho_t(X_G), where B_t(G,v) = (G disjoint-union K_t) + vw and rho_t sets x_{t+1} = x_{t+2} = ... = 0. Proof: fix a proper t-colouring kappa of G; in any extension to B_t(G,v), the K_t vertices use each colour once, w's colour differs from kappa(v) (t-1 choices), and the remaining colours fill the remaining K_t vertices in (t-1)! ways; summing over proper t-colourings gives the identity."
+    },
+    {
+      "id": "lem:transfer",
+      "label": "Lemma 3.3",
+      "content": "Let lambda partition |V(G)| with l(lambda) <= t. Then [s_{lambda+(1^t)}] X_{B_t(G,v)} = (t-1)(t-1)!*[s_lambda] X_G. Proof: by Lemma lem:specialization, work in t variables; expand X_G = sum a_mu s_mu (only l(mu) <= t survive); since e_t = x1...x_t, the tableau rule gives e_t*s_mu = s_{mu+(1^t)}; the map mu -> mu+(1^t) is injective, so the target coefficient is a_lambda; Lemma lem:specialization then yields (t-1)(t-1)!*a_lambda."
+    },
+    {
+      "id": "thm:infinite-family",
+      "label": "Theorem 3.4",
+      "content": "For every integer t >= 4, the graph F_t is a connected line graph and [s_{(4,4,4,4,1^{t-4})}] X_{F_t} = -40(t-1)(t-1)! < 0. Consequently the graphs F_t (t >= 4) form an infinite family of counterexamples to Conjecture conj:SG. Proof: Proposition prop:line-graph gives that each F_t is a connected line graph, hence claw-free; the negative coefficient follows by applying Lemma lem:transfer to lambda = (3,3,3,3) with [s_{(3,3,3,3)}] X_{G2} = -40, giving lambda+(1^t) = (4,4,4,4,1^{t-4}); the graphs are pairwise nonisomorphic since |V(F_t)| = 12+t."
+    },
+    {
+      "id": "prop:nonline-base",
+      "label": "Proposition 4.1",
+      "content": "The graph Q (obtained from G1 by adjoining the true twin u13 of u5) is connected and claw-free but not a line graph, and [s_{(3,3,3,3,1)}] X_Q = -144. Proof: adjoining a true twin preserves connectivity and claw-freeness; the set W = {u4,u5,u9,u11,u13} induces K5-u4u11, which is not a line graph of a simple graph (an impossibility argument on the two nonadjacent vertices), and line graphs are closed under induced subgraphs; the coefficient follows by a direct exact computation via the method of section 4."
+    },
+    {
+      "id": "prop:nonline-minimality",
+      "label": "Proposition 4.2",
+      "content": "Let G be a claw-free graph that is not a line graph and is not Schur-positive. Then |V(G)| >= 13 and |E(G)| >= 27, and Q is the unique such counterexample with 13 vertices and 27 edges; hence Q is the unique minimum under both lexicographic orders (V,E) and (E,V). Proof: for connected G, Prajapati's Proposition 4 plus the vertex-first census identify Q as the unique counterexample in the target stratum, and the edge-first census plus the bounds m >= n+1, m >= 7 exclude all predecessors with fewer than 27 edges; for disconnected G, a component analysis using Proposition prop:edge-first-minimality (|E(C)| >= 21) and the m >= 7 bound gives |E(G)| >= 28."
+    },
+    {
+      "id": "rem:Q-structure",
+      "label": "Remark 4.3",
+      "content": "The graph Q is quasi-line: it is obtained from the line graph G1 by replacing u5 with the clique {u5,u13} whose two vertices share neighbours outside the clique, and ({u5,u13},{u4}) is a homogeneous pair of cliques. Thus Q is an expansion of a line-graph core in the claw-free structure theory of Chudnovsky-Seymour (2005). Expository; no result depends on it."
+    },
+    {
+      "id": "thm:nonline-family",
+      "label": "Theorem 4.4",
+      "content": "For every integer t >= 5, the graph Q_t = (Q disjoint-union K_t) + u1w is connected and claw-free but not a line graph, and [s_{(4,4,4,4,2,1^{t-5})}] X_{Q_t} = -144(t-1)(t-1)! < 0. Consequently the graphs Q_t (t >= 5) form an infinite family of claw-free non-line-graph counterexamples to Conjecture conj:SG. Proof: the bridge u1w makes Q_t connected; the only possible new claw centres u1, w have neighbourhoods that are cliques-plus-edge, so Q_t is claw-free; since Q is an induced subgraph, Proposition prop:nonline-base implies Q_t is not a line graph; the negative coefficient comes from applying Lemma lem:transfer to G = Q, v = u1, lambda = (3,3,3,3,1) (established in the prose preceding the theorem); the graphs are pairwise nonisomorphic since |V(Q_t)| = 13+t."
+    }
+  ],
+  "edges": [
+    { "source": "lem:specialization", "target": "lem:transfer" },
+    { "source": "prop:line-graph", "target": "thm:infinite-family" },
+    { "source": "lem:transfer", "target": "thm:infinite-family" },
+    { "source": "prop:edge-first-minimality", "target": "prop:nonline-minimality" },
+    { "source": "prop:nonline-base", "target": "thm:nonline-family" },
+    { "source": "lem:transfer", "target": "thm:nonline-family" }
+  ]
+}

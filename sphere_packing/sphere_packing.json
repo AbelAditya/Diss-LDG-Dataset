@@ -1,0 +1,79 @@
+{
+  "nodes": [
+    {
+      "id": "thm: Cohn-Elkies",
+      "label": "Theorem 2",
+      "content": "Suppose that  $f:\\R^d\to\\R$ is an admissible function, is not identically zero, and satisfies:\begin{equation}\\label{eqn: Cohn-Elkies condition 1}f(x)\\leq 0\\mbox{ for } \\|x\\|\\geq 1\\end{equation} and \begin{equation}\\label{eqn: Cohn-Elkies condition 2}\\widehat{f}(x)\\geq0\\mbox{ for all } x\\in\\R^d.\\end{equation} Then the  density of  $d$-dimensional sphere packings is bounded above by $$\frac{f(0)}{\\widehat{f}(0)}\\cdot \frac{\\pi^{\frac{d}{2}}}{2^d\\,\\Gamma(\textstyle \frac{d}{2}+1)}=\frac{f(0)}{\\widehat{f}(0)}\\cdot \\mathrm{Vol}\\,B_d(0,\frac 12).$$"
+    },
+    {
+      "id": "prop: a(r) Fourier",
+      "label": "Proposition 1",
+      "content": "The function $a$ defined by \\eqref{eqn: a(r) definition} belongs to the Schwartz space and satisfies $$\\widehat{a}(x)=a(x). $$"
+    },
+    {
+      "id": "prop: a(r) double zeroes",
+      "label": "Proposition 2",
+      "content": "For $r>\\sqrt{2}$ we can express $a(r)$ in the following form \begin{equation}\\label{eqn: a double zeroes} a(r)=-4\\sin(\\pi r^2/2)^2\\,\\int\\limits_{0}^{i\\infty}\\phi_0\\Big(\frac{-1}{z}\\Big)\\,z^2\\,e^{\\pi i r^2 \\,z}\\,dz. \\end{equation}"
+    },
+    {
+      "id": "prop: a another integral",
+      "label": "Proposition 3",
+      "content": "For $r\\geq0$ we have \begin{align}\\label{eqn: a another integral}a(r)=&4i\\,\\sin(\\pi r^2/2)^2\\,\\Bigg(\frac{36}{\\pi^3\\,(r^2-2)}-\frac{8640}{\\pi^3\\,r^4}+\frac{18144}{\\pi^3\\,r^2}\\ +&\\int\\limits_0^\\infty\\,\\left(t^2\\,\\phi_0\\Big(\frac{i}{t}\\Big)-\frac{36}{\\pi^2}\\,e^{2\\pi t}+\frac{8640}{\\pi}\\,t-\frac{18144}{\\pi^2}\right)\\,e^{-\\pi r^2 t}\\,dt \\Bigg) .\notag\\end{align} The integral converges absolutely for all $r\\in\\R_{\\geq 0}$."
+    },
+    {
+      "id": "prop: a values",
+      "label": "Proposition 4",
+      "content": "We have \begin{equation} a(0)=\frac{-i\\,8640}{\\pi}\\qquad a(\\sqrt{2})=0\\qquad a^\\prime(\\sqrt{2})=\frac{i\\,72\\sqrt{2}}{\\pi}. \\end{equation}"
+    },
+    {
+      "id": "prop: b(r) Fourier",
+      "label": "Proposition 5",
+      "content": "The function $b$ defined by \\eqref{eqn: b(r) definition} belongs to the Schwartz space and satisfies $$\\widehat{b}(x)=-b(x). $$"
+    },
+    {
+      "id": "prop: b(r) double zeroes",
+      "label": "Proposition 6",
+      "content": "For $r>\\sqrt{2}$ function $b(r)$ can be expressed as \begin{equation}\\label{eqn: b double zeroes} b(r)=-4\\sin(\\pi r^2/2)^2\\,\\int\\limits_{0}^{i\\infty}\\psi_I(z)\\,e^{\\pi i r^2 \\,z}\\,dz. \\end{equation}"
+    },
+    {
+      "id": "prop: b another integral",
+      "label": "Proposition 7",
+      "content": "For $r\\geq0$ we have \begin{equation}\\label{eqn: b another integral}b(r)=4i\\,\\sin(\\pi r^2/2)^2\\,\\left(\frac{144}{\\pi\\,r^2}+\frac{1}{\\pi\\,(r^2-2)}+\\int\\limits_0^\\infty\\,\\left(\\psi_I(it)-144-e^{2\\pi t}\right)\\,e^{-\\pi r^2 t}\\,dt\right).\\end{equation} The integral converges absolutely for all $r\\in\\R_{\\geq 0}$."
+    },
+    {
+      "id": "prop: b values",
+      "label": "Proposition 8",
+      "content": "We have \begin{equation}\\label{eqn: b values} b(0)=0\\qquad b(\\sqrt{2})=0\\qquad b^\\prime(\\sqrt{2})=2\\sqrt{2}\\,\\pi\\,i. \\end{equation}"
+    },
+    {
+      "id": "thm: g1",
+      "label": "Theorem 4",
+      "content": "The function $$g(x):=\frac{\\pi\\,i}{8640}a(x)+\frac{i}{240\\pi}\\,b(x)$$ satisfies conditions \\eqref{eqn: g1}--\\eqref{eqn: g3}. Moreover, the values $g(x)$ and $\\widehat{g}(x)$ do not vanish for all vectors $x$ with $\\|x\\|^2\notin 2\\Z_{>0}$."
+    },
+    {
+      "id": "thm: g",
+      "label": "Theorem 3",
+      "content": "There exists a radial Schwartz function $g:\\R^8\to\\R$ which satisfies: \begin{align} g(x)&\\leq 0\\mbox{ for } \\|x\\|\\geq \\sqrt{2}, \\label{eqn: g1}\\\\widehat{g}(x)&\\geq0\\mbox{ for all } x\\in\\R^8,\\label{eqn: g2}\\ g(0)&=\\widehat{g}(0)=1.\\label{eqn: g3}\\end{align}Moreover, the values $g(x)$ and $\\widehat{g}(x)$ do not vanish for all vectors $x$ with $\\|x\\|^2\notin 2\\Z_{>0}$."
+    },
+    {
+      "id": "thm: main",
+      "label": "Theorem 1",
+      "content": " No packing of unit balls in Euclidean space $\\R^8$ has density greater than that of the $E_8$-lattice packing."
+    }
+  ],
+  "edges": [
+    { "source": "prop: a(r) double zeroes",                     "target": "prop: a another integral" },
+    { "source": "prop: a(r) double zeroes",                     "target": "thm: g1" },
+    { "source": "prop: a another integral",                     "target": "prop: a values" },
+    { "source": "prop: a another integral",                     "target": "thm: g1" },
+    { "source": "prop: a values",                     "target": "thm: g1" },
+    { "source": "prop: b(r) double zeroes",                     "target": "prop: b another integral" },
+    { "source": "prop: b(r) double zeroes",                     "target": "thm: g1" },
+    { "source": "prop: b another integral",                     "target": "prop: b values" },
+    { "source": "prop: b another integral",                     "target": "thm: g1" },
+    { "source": "prop: b values",                     "target": "thm: g1" },
+    { "source": "thm: g1",                     "target": "thm: g" },
+    { "source": "thm: g",                     "target": "thm: main" },
+    {"source":"thm: Cohn-Elkies", "target":"thm: main"}
+  ]
+}

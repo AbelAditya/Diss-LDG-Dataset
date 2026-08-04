@@ -1,0 +1,57 @@
+{
+  "nodes": [
+    {
+      "id": "Thm:Main:Coll",
+      "label": "Theorem 1.1",
+      "content": "For a finite polar space Π of rank d and parameter e embedded in PG(n−1,q) with polarity ⊥, the collinearity graph Γ(Π) has negative eigenvalue θ₂ = −(q^{d+e−2}+1), and a θ₂-eigenvector has weight ≥ 2(q^{d+e−2}+1) by the weight distribution bound. Equality holds iff n = 2d and v = a(χ_π − χ_{π^⊥}) where π, π^⊥ are d-dimensional subspaces meeting (P,L) in a non-degenerate rank-1 polar space of parameter e+d−2. In particular the bound is tight iff (P,L) ≅ Sp(4,q), O^+(2d,q) (d ∈ {2,3,4}), or U(2d,q) (d ∈ {2,3}). Proof: forward direction uses Propositions Prop:WDB and Prop:Eigenvals Coll to reduce v to χ_S − χ_T with S,T partial ovoids; a dimension/parameter inequality analysis (using Table Tab:Pol and Proposition Prop:Type preserving) forces d'=1, r=0, e=α, type-preserving ⊥; converse verifies the neighbour-balance condition case by case."
+    },
+    {
+      "id": "Thm:Main:Affine",
+      "label": "Theorem 1.2",
+      "content": "For the affine polar graph VO^ε(2d+1−ε,q) (ε = ±1, d ≥ 1), viewed as the second subconstituent of Γ(O^ε(2d+3−ε,q)): (1) the weight distribution bound is never tight for the elliptic graph VO^−(2d+2,q); (2) it is tight for the hyperbolic graph VO^+(2d,q) iff d ∈ {1,2}, in which case the optimal eigenvectors are exactly the optimal eigenvectors for Γ(O^+(2d+2,q)) from Theorem Thm:Main:Coll whose support lies in the second subconstituent. Proof mirrors Theorem Thm:Main:Coll: uses the tightness condition (partial ovoids S,T with span S ⊥ span T disjoint from P^⊥); (1) an inequality analysis rules out elliptic tightness; (2) matches the size of S to the O^+(2d+2,q) case and uses Remark Rmk:Hamming for d=1 and Proposition Prop:WDB for d=2."
+    },
+    {
+      "id": "Prop:Type preserving",
+      "label": "Proposition 2.1",
+      "content": "The finite embedded polar spaces with a type-preserving polarity are exactly Sp(2d,q), O^+(2d,q), and U(2d,q). Proof: for a subspace π of dimension k with radical of dimension r, the non-degenerate quotients of Π_π and Π_{π^⊥} embed in ambient spaces of dimensions k−r and n−k−r, whose parities agree iff n is even; the subfamily plus radical dimension determines this parity (except hyperbolic vs elliptic orthogonal); hence ⊥ fails to be type-preserving for n odd, holds for n even in symplectic and small unitary cases, holds for O^+(2d,q) and fails for O^−(2d+2,q)."
+    },
+    {
+      "id": "ldg_unlabeled_1",
+      "label": "Proposition 2.2",
+      "content": "If (P,L) is a finite embedded polar space with parameters (d,q,e) and generator set S, then |P| = (q^{d+e−1}+1)(q^d−1)/(q−1) and |S| = ∏_{i=0}^{d−1}(1+q^{i+e}). (Consequence: a partial ovoid has at most q^{d+e−1}+1 points, with equality defining an ovoid.)"
+    },
+    {
+      "id": "Prop:Eigenvals Coll",
+      "label": "Proposition 2.3",
+      "content": "If Π is a finite embedded polar space with parameters (d,q,e), then its collinearity graph Γ(Π) is strongly regular with eigenvalues k = q(q^{d−1}−1)/(q−1)·(q^{d+e−2}+1), θ₁ = q^{d−1}−1, and θ₂ = −(q^{d+e−2}+1). Cited from Brouwer–Van Maldeghem [Theorem 2.2.12]. Used in the proof of Theorem Thm:Main:Coll to identify the negative eigenvalue."
+    },
+    {
+      "id": "ldg_unlabeled_2",
+      "label": "Proposition 2.4",
+      "content": "The graph VO^ε(2m,q) is strongly regular with eigenvalues k = (q^m−ε)(q^{m−1}+ε), θ_{(3−ε)/2} = ε(q−1)q^{m−1}−1, and θ_{(3+ε)/2} = −εq^{m−1}−1. Cited from Brouwer–Van Maldeghem [§3.3.1]. Provides the negative eigenvalue used in Theorem Thm:Main:Affine."
+    },
+    {
+      "id": "ldg_unlabeled_3",
+      "label": "Lemma 2.5",
+      "content": "For ε = ±1, the graph VO^ε(2m,q) is isomorphic to the second subconstituent of Γ(O^ε(2m+2,q)). Proof: embed O^ε(2m+2,q) = (P,L) in PG(2m+1,q); fix a point P and a hyperplane H avoiding P; the projection proj(R) = PR ∩ H is a bijection between P∖P^⊥ and H∖P^⊥ that preserves the collinearity/adjacency relation, and H ∩ P^⊥ meets P in a quadric of type O^ε; hence proj is an isomorphism onto VO^ε(2m,q). Establishes the folklore fact underlying Theorem Thm:Main:Affine."
+    },
+    {
+      "id": "Prop:WDB",
+      "label": "Proposition 2.6",
+      "content": "If Γ = (V,E) is a primitive strongly regular graph with smallest eigenvalue θ₂ and v is a θ₂-eigenvector of A_Γ, then wt(v) ≥ 2|θ₂|. Equality holds iff v is a non-zero scalar multiple of χ_S − χ_T, where (1) S,T are disjoint cocliques of size |θ₂|, (2) every vertex of S is adjacent to every vertex of T, and (3) every vertex outside S∪T has the same number of neighbours in S as in T. Cited from Krotov–Mogilnykh–Potapov [Corollary 1]. The central tool: used in both main theorems to reduce optimal eigenvectors to pairs of cocliques."
+    },
+    {
+      "id": "Rmk:Hamming",
+      "label": "Remark 2.7",
+      "content": "The 2-dimensional Hamming graph H(2,t) is SRG with eigenvalues 2(t−1), t−2, −2; for i≠i', j≠j', the sets S = {(i,j),(i',j')} and T = {(i',j),(i,j')} satisfy the conditions of Proposition Prop:WDB, and all such pairs are of this form. Since Γ(O^+(4,q)) ≅ H(2,q+1) and VO^+(2,q) ≅ H(2,q), this gives an explicit description of the optimal eigenvectors for eigenvalue −2 in the smallest cases of Theorems Thm:Main:Coll and Thm:Main:Affine. Used in the d=1 case of Theorem Thm:Main:Affine."
+    }
+  ],
+  "edges": [
+    { "source": "Prop:Type preserving", "target": "Thm:Main:Coll" },
+    { "source": "Prop:Eigenvals Coll", "target": "Thm:Main:Coll" },
+    { "source": "Prop:WDB", "target": "Thm:Main:Coll" },
+    { "source": "Prop:WDB", "target": "Thm:Main:Affine" },
+    { "source": "Prop:WDB", "target": "Rmk:Hamming" },
+    { "source": "Rmk:Hamming", "target": "Thm:Main:Affine" }
+  ]
+}

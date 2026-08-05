@@ -1,0 +1,36 @@
+{
+  "nodes": [
+    { "id": "thm:main", "label": "Theorem 1.1",
+      "content": "Let (X,omega) be a compact Hermitian manifold and V a closed complex submanifold. Then every phi in PSH(V, omega_V) admits an extension Phi in PSH(X,omega) with Phi|_V = phi; equivalently PSH(X,omega)|_V = PSH(V,omega_V). Proof: reduce to X connected; take the strict monotone gap approximation psi_j of phi (Lemma 5.1); inductively build decreasing global G_j with G_j|_V = psi_j using the local smooth extension (Lemma 3.1) and the dominated patching lemma (Lemma 4.1); the decreasing limit Phi is omega-psh and restricts to phi." },
+    { "id": "thm:strict", "label": "Theorem 1.2",
+      "content": "With (X,omega), V as in Theorem 1.1: if phi in PSH(V, omega_V, epsilon) for some epsilon>0, then there are epsilon'>0 and Phi in PSH(X,omega,epsilon') with Phi|_V = phi; consequently, if omega is Kahler, every Kahler current in [omega_V] is the restriction of a Kahler current in [omega]. Proof: apply Theorem 1.1 to omega'=(1-epsilon')omega to get Phi in PSH(X,omega'), then omega+dd^c Phi >= epsilon' omega." },
+    { "id": "ldg_unlabeled_1", "label": "Remark 1.1",
+      "content": "Theorems 1.1 and 1.2 do not require (X,omega) to be compact Kahler. The proof follows the strategy of Ning-Wang-Zhou but introduces a new technique: rather than extending the smooth approximations of phi to a common neighborhood of V with uniform estimate, the uniformity of the extending data is relaxed while monotonicity is preserved; the argument should apply to the non-smooth (subvariety) case in a subsequent paper." },
+    { "id": "thm: appro", "label": "Theorem 2.1",
+      "content": "Approximation theorem (c.f. DPS01, DP04, BK07): let (X,omega) be a compact Hermitian manifold with omega a Hermitian metric and phi in PSH(X,omega). Then there is a sequence of smooth functions phi_j in PSH(X,omega) decreasing to phi on X. Restated cited result used to produce the smooth approximants underlying the strict gap approximation." },
+    { "id": "reference function", "label": "Lemma 2.1",
+      "content": "(c.f. DP04) There exists an exponentially continuous qpsh function F: X -> [-infinity, +infinity), smooth on X minus V, with logarithmic singularities along V, such that F in PSH(X, omega, epsilon); by subtracting a large constant F <= 0 on X. Restated cited result providing the singular reference potential." },
+    { "id": "lem:barrier", "label": "Lemma 2.2",
+      "content": "For an open neighbourhood W of V, there exist an exponentially continuous qpsh function b_W: X -> [-infinity, 0] and a constant C_W >= 0 such that b_W is smooth on X minus V with logarithmic singularities along V, b_W = 0 on a neighbourhood of X minus W, and dd^c b_W >= -C_W omega. Proof: multiply the reference potential F (Lemma 2.1) by a cutoff supported in W." },
+    { "id": "lem:local-smooth", "label": "Lemma 3.1",
+      "content": "Fix epsilon>0. For any 0<eta<epsilon/2 and any smooth f in PSH(V, omega_V, epsilon), there are an open neighborhood U_f of V and a smooth H_f in PSH(U_f, omega, eta) with H_f|_V = f. Proof: use the Hessian normal form of the squared distance function (Proposition 3.1) to get positivity of dd^c h in normal directions, then add A_f h to a smooth extension of f and shrink to a neighborhood." },
+    { "id": "prop:hessian", "label": "Proposition 3.1",
+      "content": "(Ning-Wang-Zhou, Proposition 2.1) On a Hermitian manifold (X,omega) with submanifold V of dimension k<n and h(z)=dist^2(z,V), for any p in V there is a holomorphic chart centered at p with U cap V = {z_{k+1}=...=z_n=0}, omega Euclidean to first order at 0, and the complex Hessian of h at 0 vanishing on tangential directions and equal to the identity on normal directions. Restated cited result giving the distance-function Hessian normal form." },
+    { "id": "ldg_unlabeled_2", "label": "Remark 3.1",
+      "content": "In the proof of Theorem 1.1 it suffices that f admits a continuous extension to a strictly omega-plurisubharmonic function on a neighborhood of V, which may also be established via a Richberg-type argument as in Collins-Tosatti." },
+    { "id": "lem:insertion", "label": "Lemma 4.1",
+      "content": "Dominated global patching lemma. Let G in PSH(X, omega, delta) be smooth near V, and H smooth in PSH(U, omega, eta) on a neighborhood U of V with H|_V < G|_V. Then for every 0<delta'<min{delta,eta} there is a global qpsh G' with G' <= G on X, G' = H on a neighborhood of V, and G' in PSH(X, omega, delta'). Proof: choose O with V compact-in O compact-in U where H<G; use the cutoff barrier b_O (Lemma 2.2) to form Q=G+lambda b with the right positivity; set G'=max{H,Q} on O and Q outside; exponential continuity forces G'=H near V." },
+    { "id": "lem:strict-gap-approx", "label": "Lemma 5.1",
+      "content": "Strict monotone smooth approximation with a gap. For phi in PSH(V, omega_V), after subtracting a constant there is a sequence psi_j of smooth functions with psi_1 <= -1, psi_j decreasing to phi, psi_j in PSH(V, omega_V, 2^{-j}), and psi_{j-1}-psi_j >= 2^{-j} for j>=2. Proof: on components where phi is -infinity take psi_j=-j-3; elsewhere use the approximation theorem (Theorem 2.1) to get smooth phi_j decreasing to phi and set psi_j = (1-2^{-j}) phi_j + 2^{-j}, verifying the curvature and gap bounds." }
+  ],
+  "edges": [
+    { "source": "reference function", "target": "lem:barrier" },
+    { "source": "prop:hessian", "target": "lem:local-smooth" },
+    { "source": "lem:barrier", "target": "lem:insertion" },
+    { "source": "thm: appro", "target": "lem:strict-gap-approx" },
+    { "source": "lem:strict-gap-approx", "target": "thm:main" },
+    { "source": "lem:local-smooth", "target": "thm:main" },
+    { "source": "lem:insertion", "target": "thm:main" },
+    { "source": "thm:main", "target": "thm:strict" }
+  ]
+}

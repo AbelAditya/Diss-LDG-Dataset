@@ -1,0 +1,34 @@
+{
+  "nodes": [
+    { "id": "thm:main", "label": "Theorem 1.1",
+      "content": "Main classification: let G be a connected graph with n >= 3 vertices. Then the symmetric edge polytope P_G^pm is Minkowski decomposable if and only if G is isomorphic to K_n, K_{2,n-2}, or K_{1,1,n-2}. Proof (only if): reduce to 2-connected G (Corollary 4.3 handles the non-2-connected case), dispose of small n, then for 2-connected G not in the exceptional families use Proposition 4.4 (cycles) or Proposition 5.1 (a good vertex exists) to build a strongly connected family of triangular faces touching every facet, and apply McMullen's criterion (Theorem 4.2). If: explicit decompositions in Section 5." },
+    { "id": "rem:CRV-connection", "label": "Remark 1.2",
+      "content": "The three exceptional graphs in Theorem 1.1 coincide with the graphs in the main result of Codenotti-Riccardi-Venturello: the sharp lower bound f_1(P_G^pm) >= |E(G)|(2|V(G)|-5) - |E_3(G)| is attained iff G is K_n, K_{2,n-2}, or K_{1,1,n-2}. The coincidence reflects a common mechanism: their count concerns safe pairs of directed edges, while this paper's proof uses transition connectedness of safe triples." },
+    { "id": "lem:cycle-face-obstruction", "label": "Lemma 2.1",
+      "content": "Let F be a proper face of P_G^pm and C a directed cycle of length l in G. With E_F(C) the set of directed edges of C whose vertices lie in F, one has |E_F(C)| <= l/2; and if equality holds, then for every directed edge v_i v_{i+1} of C not in E_F(C), the reverse rho(v_{i+1} v_i) lies in F. Proof: take a supporting functional h for F, use |h_u - h_v| <= 1 on edges, and sum the telescoping differences around C." },
+    { "id": "prop:triangles", "label": "Proposition 2.2",
+      "content": "Let T be a set of three directed edges of G. Then Delta_T is a triangular face of P_G^pm iff T satisfies (A1) no opposite pair, (A2) no two share a common directed 3- or 4-cycle, and (A3) the three are not in a common directed 5- or 6-cycle. Proof (only if) uses the edge characterization of symmetric edge polytopes and Lemma 3.1 to rule out a common 5- or 6-cycle; (if) constructs a supporting functional via the difference-constraint feasibility criterion." },
+    { "id": "thm:mcmullen", "label": "Theorem 3.2",
+      "content": "McMullen's criterion: if a convex polytope P has a strongly connected family of indecomposable faces which touches every facet of P, then P is Minkowski indecomposable. Restated cited result (McMullen, Theorem 2). Since triangles are Minkowski indecomposable, a strongly connected family of triangular faces touching every facet suffices." },
+    { "id": "cor:2-conn", "label": "Corollary 4.3",
+      "content": "Let G be a connected graph with n >= 4 vertices. If G is not 2-connected, then P_G^pm is Minkowski indecomposable. Proof: the 2-connected components correspond to free summands; facets of the free sum are joins of facets of the summands and hence indecomposable; the family of all facets of a polytope of dimension >= 3 is strongly connected and touches every facet, so Theorem 4.2 applies." },
+    { "id": "prop:cycle", "label": "Proposition 3.4",
+      "content": "Let G be a cycle of length at least 5. Then rho(T(G)) is a strongly connected family of triangular faces touching every facet of P_G^pm; in particular P_G^pm is Minkowski indecomposable. Proof: describe T(G) via the Johnson graph J(n,3) and sign patterns to show connectedness, verify that every facet is touched, and conclude by Theorem 4.2." },
+    { "id": "ldg_unlabeled_1", "label": "Remark 3.5",
+      "content": "For odd cycles of length at least 5 the Minkowski indecomposability follows more directly: by a result of Higashitani, P_G^pm is simplicial iff G contains no even cycle, and every simplicial polytope of dimension >= 3 is Minkowski indecomposable (by applying McMullen's criterion, Theorem 4.2, to all 2-dimensional faces)." },
+    { "id": "prop:transition-classification", "label": "Proposition 4.1",
+      "content": "Let G be a 2-connected graph with n >= 5 vertices having at least two vertices of degree >= 3. If G has no good vertex (a degree->=3 vertex u admitting a transition from all-incoming to all-outgoing triples at u through adjacent valid triples), then G is isomorphic to K_n, K_{2,n-2}, or K_{1,1,n-2}. Proof proceeds by the case analysis of local switches (Lemma 5.2)." },
+    { "id": "lem:local-switches", "label": "Lemma 4.2",
+      "content": "Local switches: a catalogue of specific transitions between adjacent triples in T(G), each displayed sequence consisting of members of T(G) with (A1), (A2), (A3) verified directly. These elementary switch moves are the building blocks used to establish the transition classification." }
+  ],
+  "edges": [
+    { "source": "lem:cycle-face-obstruction", "target": "prop:triangles" },
+    { "source": "thm:mcmullen", "target": "cor:2-conn" },
+    { "source": "thm:mcmullen", "target": "prop:cycle" },
+    { "source": "lem:local-switches", "target": "prop:transition-classification" },
+    { "source": "cor:2-conn", "target": "thm:main" },
+    { "source": "prop:cycle", "target": "thm:main" },
+    { "source": "prop:transition-classification", "target": "thm:main" },
+    { "source": "thm:mcmullen", "target": "thm:main" }
+  ]
+}

@@ -13,3 +13,9 @@ papers:
     paper_title: "A Counterexample to a Conjecture of Duncan on Versal Actions"
   - id: stanley_gasharov
     paper_title: "AN INFINITE FAMILY OF COUNTEREXAMPLES TO THE STANLEY–GASHAROV CONJECTURE"
+  - id: kahler_currents
+    paper_title: "On the extension of K\"ahler currents on compact complex manifolds"
+  - id: lck_curvature
+    paper_title: "Locally conformally K\"ahler manifolds with constant Levi-Civita or Bismut holomorphic sectional curvature"
+  - id: minkowski_decomp
+    paper_title: "Minkowski decomposability of symmetric edge polytopes"
